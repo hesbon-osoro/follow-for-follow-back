@@ -1,0 +1,64 @@
+.modal {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  padding: 2em;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+
+.modal div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  gap: 1em;
+  padding: 8px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.modal div input[name='username'] {
+  width: 100%;
+  padding: 5px 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.modal div[data-test='sentinelStart'],
+.modal div[data-test='sentinelEnd'] {
+  display: none;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.modal-username {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.modal-save {
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.modal-close .MuiSvgIcon-root {
+  color: white;
+  transform: scale(1.5);
+}
