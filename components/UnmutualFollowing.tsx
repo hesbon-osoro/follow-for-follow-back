@@ -40,63 +40,70 @@ const UnmutualFollowing: FC = () => {
     (currentPage - 1) * pageSize,
     currentPage * pageSize
   );
-  console.log(unmutualFollowing.length);
   return (
     <div className="following">
-      <div className="table">
-        <h2>Unmutual Following</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Avatar</th>
-              <th>Username</th>
-              <th>Unfollow</th>
-            </tr>
-          </thead>
-          <tbody>
-            {followersOnCurrentPage.map((follower, index) => (
-              <tr key={follower.id}>
-                <td>{(currentPage - 1) * pageSize + index + 1}</td>
-                <td>
-                  <Image
-                    src={follower.avatar_url}
-                    width={50}
-                    height={50}
-                    alt={follower.login}
-                  />
-                </td>
-                <td>{follower.login}</td>
-                <td>
-                  <a
-                    href={follower.html_url}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    Unfollow
-                  </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="buttons">
-        <Pagination
-          pageCount={Math.ceil(unmutualFollowing.length / pageSize)}
-          pageRangeDisplayed={5}
-          marginPagesDisplayed={2}
-          onPageChange={({ selected }) => setCurrentPage(selected + 1)}
-          containerClassName="pagination"
-          pageClassName="page-item"
-          pageLinkClassName="page-link"
-          activeClassName="active"
-          previousLabel={<FaArrowLeft />}
-          nextLabel={<FaArrowRight />}
-          breakLabel={<span className="dots">...</span>}
-          disabledClassName="disabled"
-        />
-      </div>
+      {unmutualFollowing.length ? (
+        <>
+          <div className="table">
+            <h2>Unmutual Following</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Avatar</th>
+                  <th>Username</th>
+                  <th>Unfollow</th>
+                </tr>
+              </thead>
+              <tbody>
+                {followersOnCurrentPage.map((follower, index) => (
+                  <tr key={follower.id}>
+                    <td>{(currentPage - 1) * pageSize + index + 1}</td>
+                    <td>
+                      <Image
+                        src={follower.avatar_url}
+                        width={50}
+                        height={50}
+                        alt={follower.login}
+                      />
+                    </td>
+                    <td>{follower.login}</td>
+                    <td>
+                      <a
+                        href={follower.html_url}
+                        rel="noreferrer noopener"
+                        target="_blank"
+                      >
+                        Unfollow
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="buttons">
+            <Pagination
+              pageCount={Math.ceil(unmutualFollowing.length / pageSize)}
+              pageRangeDisplayed={5}
+              marginPagesDisplayed={2}
+              onPageChange={({ selected }) => setCurrentPage(selected + 1)}
+              containerClassName="pagination"
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              activeClassName="active"
+              previousLabel={<FaArrowLeft />}
+              nextLabel={<FaArrowRight />}
+              breakLabel={<span className="dots">...</span>}
+              disabledClassName="disabled"
+            />
+          </div>
+        </>
+      ) : (
+        <div>
+          <h2>No Unmutual Following</h2>
+        </div>
+      )}
     </div>
   );
 };
