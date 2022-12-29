@@ -13,9 +13,11 @@
   width: 100vw;
   padding: 2rem 0;
   text-align: center;
-  font-family: 'Ubuntu Mono';
   font-size: 2vmax;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
