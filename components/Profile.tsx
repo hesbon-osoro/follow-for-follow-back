@@ -3,7 +3,6 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import {
   GrAdd,
-  GrClock,
   GrClose,
   GrFormClock,
   GrGithub,
@@ -12,7 +11,17 @@ import {
   GrTwitter,
 } from 'react-icons/gr';
 import { format } from 'date-fns';
-import { getElapsedTime } from '../utils/getElapsedTime';
+import ReactCountryFlag from 'react-country-flag';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
+
+import {
+  capitalCode,
+  countryCode,
+  extractCityState,
+  getElapsedTime,
+  thousandSeparator,
+  trimExtraSpaces,
+} from '../utils';
 import jquery from 'jquery';
 const $: JQueryStatic = jquery;
 
@@ -30,7 +39,9 @@ const Profile = profile => {
     company,
     created_at,
     updated_at,
+    public_repos,
   } = profile;
+  const { city, state } = extractCityState(location);
 
   const colors = [
     '#004d7a',
@@ -58,6 +69,8 @@ const Profile = profile => {
     const color = colors[value];
     $('#wave').css('background', color);
     $('#wave2').css('background', color);
+    $('#addBtn path').css('stroke', color);
+    $('#closeBtn path').css('stroke', color);
   };
 
   useEffect(() => {
@@ -67,13 +80,13 @@ const Profile = profile => {
           $('#info').animate({ top: '480px' });
           $('#profileBio').animate({ top: '0px' });
           $('#image').animate({ left: '250px' });
-          $('#project').animate({ left: '0px' });
+          $('#userInfo').animate({ left: '0px' });
         });
         $('#close').click(function () {
           $('#info').animate({ top: '328px' });
           $('#profileBio').animate({ top: '-160px' });
           $('#image').animate({ left: '0px' });
-          $('#project').animate({ left: '-250px' });
+          $('#userInfo').animate({ left: '-250px' });
         });
       });
     });
@@ -82,23 +95,32 @@ const Profile = profile => {
   return (
     <div id="profile" onAnimationIteration={changeColor}>
       <div id="image">
-        <Image src={avatar_url} alt={login} height={100} width={100} />
+        <Image
+          src={avatar_url || '/default.png'}
+          alt={login}
+          height={100}
+          width={100}
+        />
         <div id="wave"></div>
         <div id="wave2"></div>
       </div>
       <div id="info">
         <div id="viewMore">
-          <GrAdd />
+          <GrAdd id="addBtn" />
         </div>
-        <div id="name">{name}</div>
-        <div id="location">
-          <GrLocation />
-          <span>{location}</span>
-        </div>
-        <div id="date">
-          <GrFormClock />
-          <span>{format(new Date(created_at), 'MMM dd, yyyy')}</span>
-        </div>
+        <div id="name">{trimExtraSpaces(name)}</div>
+        {location && (
+          <div id="location">
+            <GrLocation />
+            <span>{location}</span>
+          </div>
+        )}
+        {created_at && (
+          <div id="date">
+            <GrFormClock />
+            <span>{format(new Date(created_at), 'MMM dd, yyyy')}</span>
+          </div>
+        )}
         <div id="social">
           {blog && (
             <a href={`${blog}`} target="_blank" rel="noopener noreferrer">
@@ -126,10 +148,92 @@ const Profile = profile => {
         </div>
       </div>
       <div id="profileBio">
-        <h2>Bio</h2>
-        <p>{bio}</p>
+        {bio && (
+          <>
+            <h2>Bio</h2>
+            <p className="line-clamp">{trimExtraSpaces(bio)}</p>
+          </>
+        )}
         <div id="close">
-          <GrClose width="30%" />
+          <GrClose id="closeBtn" width="30%" />
+        </div>
+      </div>
+      <div id="userInfo">
+        <h2>Info</h2>
+        <div id="panels">
+          {created_at && (
+            <div id="panel1">
+              <p>Joined: {getElapsedTime(created_at)} ago.</p>
+              <hr />
+            </div>
+          )}
+          {updated_at && (
+            <div id="panel2">
+              <p>Updated: {getElapsedTime(updated_at)} ago.</p>
+              <hr />
+            </div>
+          )}
+          {followers && (
+            <div id="panel3">
+              <p>Followers: {thousandSeparator(followers)}</p>
+              <hr />
+            </div>
+          )}
+          {following && (
+            <div id="panel4">
+              <p>Following: {thousandSeparator(following)}</p>
+              <hr />
+            </div>
+          )}
+          {public_repos && (
+            <div id="panel5">
+              <p>Public repos: {thousandSeparator(public_repos)}</p>
+              <hr />
+            </div>
+          )}
+          {company && (
+            <div id="panel6">
+              <p>Company: {trimExtraSpaces(company)}</p>
+              <hr />
+            </div>
+          )}
+          {city && (
+            <div id="panel7">
+              <p>City: {trimExtraSpaces(city)}</p>
+              <hr />
+            </div>
+          )}
+          {(state || city) && (
+            <div id="panel7">
+              <p>
+                State: {trimExtraSpaces(state)}
+                <ReactCountryFlag
+                  className="flag-icon"
+                  countryCode={
+                    countryCode(state).toLowerCase() ||
+                    capitalCode(city).toLowerCase()
+                  }
+                  width={50}
+                  height={20}
+                />
+              </p>
+              <hr />
+            </div>
+          )}
+          {(state || city) && (
+            <div id="panel8">
+              <p>
+                Flag:
+                <span
+                  className={`flag-icon fi fi-${
+                    countryCode(state).toLowerCase() ||
+                    capitalCode(city).toLowerCase()
+                  }`}
+                ></span>
+              </p>
+              <hr />
+            </div>
+          )}
         </div>
       </div>
     </div>
