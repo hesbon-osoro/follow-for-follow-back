@@ -34,7 +34,7 @@ const MenuButton = ({ router }) => {
   return (
     <div>
       <IconButton onClick={handleMenuClick}>
-        <MenuIcon />
+        <MenuIcon className="menu-btn" />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
