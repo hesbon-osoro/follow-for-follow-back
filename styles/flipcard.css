@@ -1,0 +1,57 @@
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+/* Flip Button Styles */
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.flip-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  outline: none;
+  color: #fff;
+  background-color: #007bff;
+}
+
+.flip-button:hover {
+  background-color: #0069d9;
+}
+
+.flip-button:active {
+  background-color: #0062cc;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.flip-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.flip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: 1.5em;
+  color: currentColor;
+}
