@@ -1,5 +1,4 @@
 // @ts-nocheck
-import Head from 'next/head';
 import Image from 'next/image';
 import { withRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -7,6 +6,7 @@ import { GrGithub } from 'react-icons/gr';
 import {
   DropLet,
   ErrorBoundary,
+  Head,
   MenuButton,
   Profile,
   SetUsernameModal,
@@ -43,15 +43,7 @@ function Home({ router }) {
   return (
     <ErrorBoundary>
       <div className={styles.container}>
-        <Head>
-          <title>Follow For Follow Back</title>
-          <meta
-            name="description"
-            content="Quickly know who you need to follow back at GitHub."
-          />
-          <link rel="icon" href="./fffb.png" />
-        </Head>
-
+        <Head />
         <h1 className={styles.title}>
           Follow For <Image src="/fffb.png" width={50} height={50} alt="" />{' '}
           Follow Back
