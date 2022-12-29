@@ -9,3 +9,4 @@ export { default as UnmutualFollowers } from './UnmutualFollowers';
 export { default as MenuButton } from './MenuButton';
 export { default as SetUsernameModal } from './SetUsernameModal';
 export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as Head } from './Head';
