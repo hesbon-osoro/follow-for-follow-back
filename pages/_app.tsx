@@ -8,6 +8,7 @@ import '../styles/following.css';
 import '../styles/flipcard.css';
 import '../styles/modal.css';
 import '../styles/errorBoundary.css';
+import '../styles/menu.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
