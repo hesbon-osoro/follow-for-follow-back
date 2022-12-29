@@ -4,8 +4,7 @@ import Pagination from 'react-paginate';
 import Image from 'next/image';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { withRouter } from 'next/router';
-
-import { DropLet } from '.';
+import { DropLet, Head } from '.';
 
 const Followers: FC = () => {
   let followers = [];
@@ -41,6 +40,7 @@ const Followers: FC = () => {
 
   return (
     <div className="following">
+      <Head title="Followers" />
       {followers.length ? (
         <>
           <div className="table">
