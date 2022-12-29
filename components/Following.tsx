@@ -3,8 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import Pagination from 'react-paginate';
 import Image from 'next/image';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
-import DropLet from './DropLet';
+import { DropLet, Head } from '.';
 import { withRouter } from 'next/router';
 
 const Following: FC = () => {
@@ -35,6 +34,7 @@ const Following: FC = () => {
   console.log(following.length);
   return (
     <div className="following">
+      <Head title="Following" />
       {following.length ? (
         <>
           <div className="table">
