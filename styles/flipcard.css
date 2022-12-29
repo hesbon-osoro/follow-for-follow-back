@@ -1,10 +1,16 @@
+:root {
+  --button-color: darkcyan;
+  --button-hover: rgb(91, 230, 230);
+  --button-active: rgb(70, 224, 224);
+  --button-shadow: rgb(10, 199, 199);
+}
+
 .flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .flip-buttons {
@@ -13,6 +19,7 @@
   align-items: center;
   max-width: 80vw;
   margin: 0 auto;
+  gap: 1.5em;
 }
 
 /* Flip Button Styles */
@@ -29,16 +36,16 @@
     box-shadow 0.15s ease-in-out;
   outline: none;
   color: #fff;
-  background-color: #007bff;
+  background-color: var(--button-color);
 }
 
 .flip-button:hover {
-  background-color: #0069d9;
+  background-color: var(--button-hover);
 }
 
 .flip-button:active {
-  background-color: #0062cc;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  background-color: var(--button-active);
+  box-shadow: 0 0 0 0.2rem var(--button-shadow);
 }
 
 .flip-button:disabled {
