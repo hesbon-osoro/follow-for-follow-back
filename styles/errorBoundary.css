@@ -1,0 +1,23 @@
+.error-boundary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.error-boundary img {
+  transform: scale(2);
+}
+
+.error-boundary h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1em auto;
+}
+
+.error-boundary .MuiButtonBase-root.MuiButton-root.MuiButton-text {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+}
