@@ -2,12 +2,11 @@
 import React, { FC, useEffect, useState } from 'react';
 import Pagination from 'react-paginate';
 import Image from 'next/image';
+import { DropLet, Head } from '.';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 let followers = [];
 let following = [];
-
-import DropLet from './DropLet';
 
 const UnmutualFollowing: FC = () => {
   const [loading, setLoading] = useState(true);
@@ -42,6 +41,7 @@ const UnmutualFollowing: FC = () => {
   );
   return (
     <div className="following">
+      <Head title="Unmutual Following" />
       {unmutualFollowing.length ? (
         <>
           <div className="table">
