@@ -11,7 +11,7 @@ import {
   Profile,
   SetUsernameModal,
 } from '../components';
-import { fetchAndStoreUsers, useUsername } from '../hooks';
+import { fetchAndStoreUsers } from '../hooks';
 import styles from '../styles/Home.module.css';
 
 function Home({ router }) {
@@ -25,18 +25,20 @@ function Home({ router }) {
   const updateProfileData = newProfileData => {
     setProfileData(newProfileData);
   };
-  // prettier-ignore
-  const [username,] = useUsername();
 
-  console.log('username', username);
+  const fetchDefaultData = async () => {
+    const res = await fetch(`https://api.github.com/users/hesbon-osoro`);
+    const data = await res.json();
+    setProfileData(data);
+    localStorage.setItem('profile', JSON.stringify(data));
+  };
 
   useEffect(() => {
     setTimeout(() => {
       if (profileData) setLoading(false);
+      else fetchDefaultData();
     }, 3000);
   }, [profileData]);
-
-  console.table(profileData);
 
   profileData && fetchAndStoreUsers(profileData['login']);
 
