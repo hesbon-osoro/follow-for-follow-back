@@ -18,7 +18,9 @@ export const useUsername = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.localStorage) {
-      setUsername(window.localStorage.getItem('username') || 'hesbon-osoro');
+      setUsername(
+        JSON.parse(window.localStorage.getItem('username')) || 'hesbon-osoro'
+      );
     } else {
       setUsername('hesbon-osoro');
     }
