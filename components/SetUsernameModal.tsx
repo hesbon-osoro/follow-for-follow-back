@@ -26,8 +26,6 @@ const SetUsernameModal = ({ onUsernameSave }) => {
       }
       fetchAndStoreUsers(username);
       localStorage.setItem('profile', JSON.stringify(data));
-      localStorage.setItem('followersCount', JSON.stringify(data.followers));
-      localStorage.setItem('followingCount', JSON.stringify(data.following));
       onUsernameSave(data);
       setIsModalOpen(false);
     } catch (error) {
