@@ -1,10 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Follow For Follow Back
 
-## Getting Started
+## Find your mutual connections on GitHub with Follow for Follow back
 
-First, run the development server:
+[![no profile](assets/imgs/follow-for-follow-back-no-profile.png)](https://follow-for-follow-back.vercel.app/)
+
+[![username](assets/imgs/follow-for-follow-back-username-modal.png)](https://follow-for-follow-back.vercel.app/)
+
+[![Hesbon](assets/imgs/follow-for-follow-back-hesbon.png)](https://follow-for-follow-back.vercel.app/)
+
+[![details](assets/imgs/follow-for-follow-back-hesbon-details.png)](https://follow-for-follow-back.vercel.app/)
+
+[![Followers](assets/imgs/follow-for-follow-back-hesbon-followers.png)](https://follow-for-follow-back.vercel.app/)
+
+[![Unmutual followers](assets/imgs/follow-for-follow-back-hesbon-unmutual-followers.png)](https://follow-for-follow-back.vercel.app/)
+
+[![Following](assets/imgs/follow-for-follow-back-hesbon-following.png)](https://follow-for-follow-back.vercel.app/)
+
+[![Unmutual Following](assets/imgs/follow-for-follow-back-hesbon-unmutual-following.png)](https://follow-for-follow-back.vercel.app/)
+
+## Setup
 
 ```bash
+# Clone the repo
+git clone https://github.com/hesbon-osoro/follow-for-follow-back.git
+
+# Navigate the directory and install the packages
+cd follow-for-follow-back && yarn
+
+# Start the App
 npm run dev
 # or
 yarn dev
@@ -12,23 +35,18 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+[`Live`](https://follow-for-follow-back.vercel.app/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<Roles || Offers || Opportunities?? [`Mail`](mailto:hesbonosoro1@gmail.com) Me!>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<<---WorkFromHome/ Remote--->>
 
-## Learn More
+_Actively interviewing_
 
-To learn more about Next.js, take a look at the following resources:
+<Mail me your coding assignment: hesbonosoro1@gmail.com>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/wazimu)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+OR [`Paypal`](https://www.paypal.com/) use <hesbonosoro1@gmail.com>
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you.
