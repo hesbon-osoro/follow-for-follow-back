@@ -9,6 +9,7 @@ import '../styles/flipcard.css';
 import '../styles/modal.css';
 import '../styles/errorBoundary.css';
 import '../styles/menu.css';
+import '../styles/rateLimitModal.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
