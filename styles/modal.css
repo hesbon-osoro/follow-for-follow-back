@@ -41,12 +41,16 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
   margin-top: 0.5em;
+  color: #fff;
+  background-color: darkcyan;
 }
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.modal-save {
   border: 1px solid #ccc;
   outline: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  background-color: darkcyan;
 }
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.modal-close {
