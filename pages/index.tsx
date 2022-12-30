@@ -9,6 +9,7 @@ import {
   Head,
   MenuButton,
   Profile,
+  RateLimitModal,
   SetUsernameModal,
 } from '../components';
 import { fetchAndStoreUsers } from '../hooks';
@@ -50,6 +51,7 @@ function Home({ router }) {
           Follow For <Image src="/fffb.png" width={50} height={50} alt="" />{' '}
           Follow Back
         </h1>
+        <RateLimitModal />
         <MenuButton location={router.asPath} />
         <SetUsernameModal onUsernameSave={updateProfileData} />
         <main className={styles.main}>
