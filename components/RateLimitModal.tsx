@@ -1,7 +1,8 @@
 // @ts-nocheck
-import { Modal } from '@material-ui/core';
+import { Button, Modal } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import WarningIcon from '@material-ui/icons/Warning';
+import RefreshIcon from '@material-ui/icons/Refresh';
 import CountdownTimer from './CountdownTimer';
 
 if (typeof window !== 'undefined' && window.localStorage) {
@@ -14,7 +15,13 @@ const RateLimitModal = () => {
   useEffect(() => {
     if (profile && profile.message) {
       setOpen(true);
-      localStorage.setItem('countdown', 60);
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem('countdown', 60);
+        // Clear the data from local storage
+        window.localStorage.removeItem('following');
+        window.localStorage.removeItem('followers');
+        window.localStorage.removeItem('username');
+      }
     }
   }, [profile]);
 
@@ -45,16 +52,35 @@ const RateLimitModal = () => {
           </a>
         </p>
         <p>
-          <strong>
-            <em>Note:</em>
-          </strong>
+          <strong>Note: </strong>
           Examine this app with follow(ers)ing less 1000 to prevent hitting the
           rate limit on unauthorized user.
         </p>
         <CountdownTimer />
+        <RefreshButton />
       </div>
     </Modal>
   );
 };
 
+const RefreshButton = () => {
+  const handleRefresh = () => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      // Clear the data from local storage
+      window.localStorage.removeItem('profile');
+      window.localStorage.removeItem('following');
+      window.localStorage.removeItem('followers');
+      window.localStorage.removeItem('username');
+
+      // Reload the browser
+      window.location.reload();
+    }
+  };
+
+  return (
+    <Button className="refresh-button" onClick={handleRefresh}>
+      <RefreshIcon /> Refresh Anyhow
+    </Button>
+  );
+};
 export default RateLimitModal;

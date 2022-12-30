@@ -20,7 +20,6 @@
 
 [![Rate limit](assets/imgs/follow-for-follow-back-rate-limit.png)](https://follow-for-follow-back.vercel.app/)
 
-
 ## Setup
 
 ```bash

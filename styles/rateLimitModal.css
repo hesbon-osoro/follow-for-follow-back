@@ -1,5 +1,5 @@
 .rate-limit-modal {
-  border: 2px solid red;
+  border: 2px solid darkcyan;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,4 +42,24 @@
 
 .rate-limit-modal p {
   text-align: center;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.refresh-button {
+  /* Style the button */
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.refresh-button svg {
+  /* Style the icon */
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.refresh-button:hover {
+  background-color: darkcyan;
 }
