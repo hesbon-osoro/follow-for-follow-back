@@ -29,7 +29,7 @@ export const useUsername = () => {
   const setUsernameInLocalStorage = (newUsername: string) => {
     setUsername(newUsername);
     if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem('username', newUsername);
+      window.localStorage.setItem('username', JSON.stringify(newUsername));
     }
   };
 
