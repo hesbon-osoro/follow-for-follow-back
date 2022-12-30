@@ -43,13 +43,15 @@ const RateLimitModal = () => {
         <div className="rate-limit-modal-message">{profile?.message}</div>
         <p>
           Read{' '}
-          <a
-            href={profile?.documentation_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            documentation.
-          </a>
+          <strong>
+            <a
+              href={profile?.documentation_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              documentation.
+            </a>
+          </strong>
         </p>
         <p>
           <strong>Note: </strong>

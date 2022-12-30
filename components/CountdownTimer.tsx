@@ -17,7 +17,9 @@ const CountdownTimer = () => {
   return (
     <>
       {countdown > 0 ? (
-        <h2>Refresh in {countdown}min.</h2>
+        <h2>
+          Refresh in <span>{countdown}</span>min.
+        </h2>
       ) : (
         <h2>Try refreshing now.</h2>
       )}

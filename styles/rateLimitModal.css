@@ -36,6 +36,7 @@
   margin-top: 8px;
 }
 
+.rate-limit-modal h2 > span,
 .rate-limit-modal a {
   color: darkcyan;
 }
@@ -62,4 +63,8 @@
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.refresh-button:hover {
   background-color: darkcyan;
+}
+
+.rate-limit-modal .MuiSvgIcon-root.MuiSvgIcon-colorSecondary {
+  fill: darkcyan;
 }
