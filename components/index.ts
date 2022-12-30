@@ -10,3 +10,5 @@ export { default as MenuButton } from './MenuButton';
 export { default as SetUsernameModal } from './SetUsernameModal';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as Head } from './Head';
+export { default as RateLimitModal } from './RateLimitModal';
+export { default as CountdownTimer } from './CountdownTimer';
