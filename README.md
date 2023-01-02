@@ -2,6 +2,8 @@
 
 ## Find your mutual connections on GitHub with Follow for Follow back
 
+## Increase your followers and following with this tool.
+
 [![no profile](assets/imgs/follow-for-follow-back-no-profile.png)](https://follow-for-follow-back.vercel.app/)
 
 [![username](assets/imgs/follow-for-follow-back-username-modal.png)](https://follow-for-follow-back.vercel.app/)
@@ -38,6 +40,10 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 [`Live`](https://follow-for-follow-back.vercel.app/)
+
+Register Github OAuth Apps [`here`](https://github.com/settings/developers)
+
+put the clientID and client secret to your .env file
 
 <Roles || Offers || Opportunities?? [`Mail`](mailto:hesbonosoro1@gmail.com) Me!>
 
